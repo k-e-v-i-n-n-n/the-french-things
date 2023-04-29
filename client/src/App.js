@@ -39,7 +39,7 @@ function App() {
       else{setIsLogged(false)}
   },[user])
 
-  // console.log("user", user)
+
 
 
   return (
