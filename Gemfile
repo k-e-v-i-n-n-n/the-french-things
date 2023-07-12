@@ -16,6 +16,13 @@ gem 'puma', '~> 5.0'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# gem 'http-proxy', '~> 0.1.0'
+gem 'rack-proxy'
+# gem 'actionpack', '~> 6.1.3', '>= 6.1.3.2'
+gem 'httparty'
+
+
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

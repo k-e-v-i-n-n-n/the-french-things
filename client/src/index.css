@@ -253,6 +253,12 @@ a {
   border: .1px solid black;
 }
 
+.nav-buttons:hover{
+
+  font-weight: 570;
+  /* font-size: 16px; */
+}
+
 /* ************************************************Login Page */
 
 .login-container {
@@ -370,6 +376,8 @@ a {
   padding: 8px;
   position: relative;
   font-family: "Poppins";
+  font-size: 14px;
+  color: black;
 }
 
 .text-box-center {
@@ -405,10 +413,16 @@ a {
   background:white;
 }
 
+.text-box-buttons:hover{
+
+  background:rgb(0, 0, 0);
+  color: white;
+}
+
 textarea:disabled{
   
   background-color:white;
- color: black;
+  color: rgb(0, 0, 0);
 }
 
 /* ***********************************************Save Modal */
@@ -629,7 +643,8 @@ textarea:disabled{
   font-size: 12px;
   display: flex;
   justify-content: center;
-  /* position: relative; */
+  align-items: center;
+
   visibility: hidden;
   border: .3px solid black;
   border-radius: 5px;
@@ -706,6 +721,12 @@ textarea:disabled{
   font-size: 12px;
 }
 
+.add-new-button:hover{
+
+  color:white;
+  background-color: black;
+}
+
 .add-category-container{
   display: flex;
   flex-direction: column;
@@ -734,6 +755,7 @@ textarea:disabled{
 
 .category-title{
   font-weight: 500;
+  margin-top:8px;
 }
 
 .category-card-container:hover .category-delete-x{
@@ -741,18 +763,24 @@ textarea:disabled{
 }
 
 .category-delete-x{
-  font-size: 8px;
+  font-size: 12px;
   display: flex;
   justify-content: center;
+  align-items: center;
   position: relative;
   visibility: hidden;
-  border: .05px solid black;
-  border-radius: 5px;
+
+  border: none;
+
+  /* border: .3px solid black;
+  border-radius: 5px; */
   background: rgb(255, 255, 254);
+  width: 18px;
+  height: 18px;
   box-sizing: border-box;
 
-  top: 13px;
-  left: 58px;
+  top: 6px;
+  left: 56px;
 }
 
 .star-select-page-container{
@@ -768,6 +796,12 @@ textarea:disabled{
   position: relative;
   top:34px;
   right: 100px;
+  cursor: pointer;
+}
+
+#back-arrow:hover{
+  font-weight: 700;
+  font-size: 18px;
 }
 
 .error-category-container{
@@ -827,4 +861,111 @@ textarea:disabled{
   display: flex;
   justify-content: center;
   margin-top: 34px;
+}
+
+/* **********************************  Translation Loading ANIMATION */
+
+
+.textarea-loading {
+  background-image: url('../gifs/1490.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+  /* background-size: 20px 20px; */
+
+
+  border: 0.5px solid;
+  border-color: var(--black);
+  border-radius: 3px;
+  height: 375px;
+  min-width: 371px;
+  padding: 8px;
+  position: relative;
+  font-family: "Poppins";
+
+}
+
+
+.lds-roller {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-roller div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+.lds-roller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fed;
+  margin: -4px 0 0 -4px;
+}
+.lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+.lds-roller div:nth-child(1):after {
+  top: 63px;
+  left: 63px;
+}
+.lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+.lds-roller div:nth-child(2):after {
+  top: 68px;
+  left: 56px;
+}
+.lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+.lds-roller div:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+}
+.lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+.lds-roller div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+.lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+.lds-roller div:nth-child(5):after {
+  top: 71px;
+  left: 32px;
+}
+.lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+.lds-roller div:nth-child(6):after {
+  top: 68px;
+  left: 24px;
+}
+.lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+.lds-roller div:nth-child(7):after {
+  top: 63px;
+  left: 17px;
+}
+.lds-roller div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+.lds-roller div:nth-child(8):after {
+  top: 56px;
+  left: 12px;
+}
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

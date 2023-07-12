@@ -17,37 +17,57 @@ function App() {
   const [showListModal, setShowListModal] = useState()
   const [catSelected, setCatSelected] = useState(false)
   const [wordState, setWordState] = useState()
+  const [loading, setLoading] = useState(false);
 
+
+function translateText(){
+  fetch(`https://g-translate1.p.rapidapi.com/translate?text=${sourceText}&tl=${targetLang}&sl=${sourceLang}`,{
+
+  method: 'GET',
+	headers: {
+		  'X-RapidAPI-Key': process.env.REACT_APP_RAPID_API_KEY,
+      'X-RapidAPI-Host': process.env.REACT_APP_RAPID_API_HOST
+	}, }).then((r) => r.json()).then((response) => {console.log("res", response);setLoading(false);
+  setTranslationObject({...translationObject, [targetLang]: response.data.translation})})
+  .catch((error) => {
+	console.error(error)})}
+
+<<<<<<< HEAD
   const translateText = async () => {
     const data = {sourceText, sourceLang, targetLang}
     const response = await axios.get('/translate', {params : data})
     setTranslationObject({...translationObject, [targetLang]: response.data})
   }
+=======
+>>>>>>> 569c7ed33718426bf9072d9ddc2d3a7a1724814d
 
   useEffect(() =>{
-    fetch("/me")
+    fetch("/api/me")
     .then((r) =>{
       if(r.ok)
       {r.json().then((r) => {setUser(r); setIsLogged(true)})}
       else
-      {console.log("/me says", r)}})
+      {console.log("/api/me says", r)}})
   }, [])
 
   useEffect(() =>{
     if(user){
-      setIsLogged(true)}
+      setIsLogged(true); console.log("user", user)}
       else{setIsLogged(false)}
   },[user])
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 569c7ed33718426bf9072d9ddc2d3a7a1724814d
   return (
     <>
         <Header1/>
         <Header2 setCatSelected={setCatSelected} />
         <Routes>
-          <Route path="/" element={<Translate translateText={translateText}/>}/>
+          <Route path="/" element={<Translate loading={loading} setLoading={setLoading} translateText={translateText}/>}/>
           <Route path="/expressions" element={<Expressions showListModal={showListModal} setShowListModal={setShowListModal} />}/>
           <Route path="/words" element={<Words wordState={wordState} setWordState={setWordState} showListModal={showListModal} setShowListModal={setShowListModal} />}/>
           <Route path="/stars" element={<Stars wordState={wordState} setWordState={setWordState} catSelected={catSelected} setCatSelected={setCatSelected} showListModal={showListModal} setShowListModal={setShowListModal} />}/>

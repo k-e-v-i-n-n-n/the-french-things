@@ -11,13 +11,12 @@ const WordCard = ({word, setShowListModal, wordState, setWordState}) => {
 
   function editWord(e){
     e.preventDefault()
-    fetch(`/words/${word.id}`, {
+    fetch(`/api/words/${word.id}`, {
 
       method:"PATCH",
       headers:{"Content-Type": "application/json"},
       body: JSON.stringify({french: wordEdit.french, english: wordEdit.english})
     }).then((r) => r.json()).then((r) => {updateWordState(r); setEditMode(false)})
-
   }
 
   function setWord(e){
@@ -26,7 +25,7 @@ const WordCard = ({word, setShowListModal, wordState, setWordState}) => {
 
   function deleteWord(e){
     e.preventDefault()
-    fetch(`/words/${word.id}`, {method: "DELETE"})
+    fetch(`/api/words/${word.id}`, {method: "DELETE"})
     .then(() => deleteWordState())}
 
   function updateWordState(r){
@@ -79,6 +78,6 @@ const WordCard = ({word, setShowListModal, wordState, setWordState}) => {
     }
       </>
     )
-  }
+  } 
   
   export default WordCard

@@ -7,7 +7,7 @@ const Category = ({category, setCatSelected}) => {
 
 function deleteCat(e){
   e.stopPropagation()
-  fetch(`/categories/${category.id}`,{
+  fetch(`/api/categories/${category.id}`,{
     method: "DELETE"
   }).then(() => deleteState())}
 
@@ -21,9 +21,7 @@ function deleteCat(e){
 
       <div className="category-card-container" onClick={()=>setCatSelected(category)} >
         <p className="category-title" >{category.category}</p>
-        <div onClick={(e) => {deleteCat(e)}}>
-          <button className="category-delete-x" >x</button>
-        </div>
+          <button className="category-delete-x" onClick={(e) => {deleteCat(e)}}  >x</button>
       </div>
         
     )
