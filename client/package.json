@@ -1,12 +1,8 @@
 {
   "name": "phase-5-client",
   "version": "0.1.0",
-<<<<<<< HEAD
-  "proxy": "https://localhost:3000/",
-=======
->>>>>>> 569c7ed33718426bf9072d9ddc2d3a7a1724814d
   "private": true,
-  "proxy": "http://localhost:3000/",
+  "proxy": "https://localhost:3000/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
