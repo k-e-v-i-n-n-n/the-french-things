@@ -32,7 +32,6 @@ function translateText(){
   .catch((error) => {
 	console.error(error)})}
 
-
   useEffect(() =>{
     fetch("/api/me")
     .then((r) =>{
