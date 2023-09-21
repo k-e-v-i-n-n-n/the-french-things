@@ -32,14 +32,6 @@ function translateText(){
   .catch((error) => {
 	console.error(error)})}
 
-<<<<<<< HEAD
-  const translateText = async () => {
-    const data = {sourceText, sourceLang, targetLang}
-    const response = await axios.get('/translate', {params : data})
-    setTranslationObject({...translationObject, [targetLang]: response.data})
-  }
-=======
->>>>>>> 569c7ed33718426bf9072d9ddc2d3a7a1724814d
 
   useEffect(() =>{
     fetch("/api/me")
@@ -56,12 +48,6 @@ function translateText(){
       else{setIsLogged(false)}
   },[user])
 
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> 569c7ed33718426bf9072d9ddc2d3a7a1724814d
   return (
     <>
         <Header1/>
