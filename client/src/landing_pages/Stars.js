@@ -28,8 +28,10 @@ const Stars = ({catSelected, setCatSelected, setShowListModal, setWordState}) =>
                     {singleCat}
                     <p></p>
                 </div>
-                <div className="expressions-page-container">
-                    {wordMap}
+                <div calssName="expressions-page">
+                    <div className="expressions-page-container">
+                        {wordMap}
+                    </div>
                 </div>
              </div> 
              : 
