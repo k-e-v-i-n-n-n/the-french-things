@@ -1,10 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom"
-import { useState, useContext } from "react";
+import {useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../Context";
-
-
 
 function Header2({setCatSelected}) {
 
@@ -29,14 +27,9 @@ function Header2({setCatSelected}) {
         <Link to="/">
           <button className="nav-buttons">translate</button>
         </Link>
-
-          <button name="expressions" className="nav-buttons" onClick={(e) => navRoute(e)}>expressions</button>
-
-       
-         <button name="words" className="nav-buttons" onClick={(e) => navRoute(e)}>words</button>
-
+        <button name="expressions" className="nav-buttons" onClick={(e) => navRoute(e)}>expressions</button>
+        <button name="words" className="nav-buttons" onClick={(e) => navRoute(e)}>words</button>
         <button name="stars" className="nav-buttons" onClick={(e)=>{navRoute(e); setCatSelected(false)}}>stars</button>
-     
     </div>
   )
 }
