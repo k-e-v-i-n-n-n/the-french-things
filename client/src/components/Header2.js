@@ -1,9 +1,27 @@
 import React from "react";
 import {Link} from "react-router-dom"
+import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { AppContext } from "../Context";
 
 
 
 function Header2({setCatSelected}) {
+
+  const navigate = useNavigate()
+  const {isLogged} = useContext(AppContext)
+
+  const navRoute = (e) => {
+    e.preventDefault();
+    let name = e.target.name
+    if(!isLogged){
+      navigate("/login")
+    }
+    else{
+      navigate(`/${name}`)
+    }
+
+  }
 
 
   return (
@@ -11,15 +29,14 @@ function Header2({setCatSelected}) {
         <Link to="/">
           <button className="nav-buttons">translate</button>
         </Link>
-        <Link to="/expressions">
-          <button className="nav-buttons">expressions</button>
-        </Link>
-        <Link to="/words">
-         <button className="nav-buttons">words</button>
-        </Link>
-        <Link to="/stars">
-        <button className="nav-buttons" onClick={()=> setCatSelected(false)}>stars</button>
-        </Link>
+
+          <button name="expressions" className="nav-buttons" onClick={(e) => navRoute(e)}>expressions</button>
+
+       
+         <button name="words" className="nav-buttons" onClick={(e) => navRoute(e)}>words</button>
+
+        <button name="stars" className="nav-buttons" onClick={(e)=>{navRoute(e); setCatSelected(false)}}>stars</button>
+     
     </div>
   )
 }
