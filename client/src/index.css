@@ -277,6 +277,12 @@ a {
   border-radius: 3px;
 }
 
+.login-note{
+  text-align: center;
+  font-size: 12px;
+  font-style: italic;
+}
+
 .login-labels {
   
   font-size: 18px;
@@ -336,9 +342,6 @@ a {
   justify-content: center;
   align-items: center;
   font-size: 24px;
-
-  /* width: 100px;
-  height: 100px; */
   margin: 60px;
 }
 

@@ -5,8 +5,8 @@ import { AppContext } from "../Context"
 const Login = () => {
 
     const [isSignup, setIsSignup] = useState(false)
-    const [username, setUsername] = useState()
-    const [password, setPassword] = useState()
+    const [username, setUsername] = useState("")
+    const [password, setPassword] = useState("")
     const [passwordConfirmation, setPasswordConfirmation] = useState()
     const [errors, setErrors] = useState()
 
@@ -47,11 +47,13 @@ const Login = () => {
         <div className="login-container" >
 
             {user?.username ? <p className="login-greeting">Bonjour, {user.username}</p> : 
+            
             <form className="login-form" >
-                <label className="login-labels" >Username</label>
-                <input type="text" value={username} placeholder="kevin@thefrenchthings.com" onChange={(e) => setUsername(e.target.value)} />
+                <p className="login-note">Press "login" below to use the demo "user" account...</p>
+                <label className="login-labels">Username</label>
+                <input type="text" value={isSignup ? username : "user"} placeholder="kevin@thefrenchthings.com" onChange={(e) => setUsername(e.target.value)} />
                 <label className="login-labels">Password</label>
-                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                <input type="password" value={isSignup ? password : "password"} onChange={(e) => setPassword(e.target.value)}/>
                 {isSignup &&<label className="login-labels">Password Confirmation</label>}
                 {isSignup && <input type="password" value={passwordConfirmation} onChange={(e) => setPasswordConfirmation(e.target.value)}/>}
                 <div className="error-login-container" >
