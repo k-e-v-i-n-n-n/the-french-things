@@ -11,7 +11,7 @@ function Header1() {
   const loggedIn = <p className="login-text" id ="logged-in-text">Bonjour, {user?.username}</p> 
                       
   const loggedOut = <> <Link to="/login">
-                          <div className="login-text">bonjourbonjourbonjourbonjour, login</div>
+                          <div className="login-text">login</div>
                         </Link> </>
 
 function logOut() {
