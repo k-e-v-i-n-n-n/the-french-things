@@ -11,7 +11,7 @@ function Header1() {
   const loggedIn = <p className="login-text" id ="logged-in-text">Bonjour, {user?.username}</p> 
                       
   const loggedOut = <> <Link to="/login">
-                          <div className="login-text">login</div>
+                          <div className="login-text">bonjourbonjourbonjourbonjour, login</div>
                         </Link> </>
 
 function logOut() {
@@ -24,31 +24,39 @@ function logOut() {
 
   return (
     <div className="header-1">
-      <div className="invisible-container">invisible</div>
-      <div className="header-logo-container">
-        <div className="header-flag">
-          <div className="blue"></div>
-          <div className="white"></div>
-          <div className="red"></div>
+        <div className="invisible-container">
+            <div className="logged-in-or-out" >
+              {user? loggedIn : loggedOut}
+              </div>
+              <div className="avatar-container">
+                  <img className="avatar" src={avatar}/>
+                  {user && <button className="login-text" id="logout" onClick={logOut}>logout</button>}
+              </div>  
         </div>
-        <div className="header-logo-text">
-          <h1 className="title valign-text-middle">the french things</h1>
+
+        <div className="header-logo-container">
+            <div className="header-flag">
+              <div className="blue"></div>
+              <div className="white"></div>
+              <div className="red"></div>
+            </div>
+            <div className="header-logo-text">
+              <h1 className="title valign-text-middle">the french things</h1>
+            </div>
         </div>
-      </div>
-      <div className="login-icon-container">
-      <div className="logged-in-or-out" >
-      {user? loggedIn : loggedOut}
-      </div>
-      <div className="avatar-container" >
-          <img className="avatar" src={avatar}/>
-          {user && <button className="login-text" id="logout" onClick={logOut}>logout</button>}
-          
-      </div>
-      
+    
+        <div className="login-icon-container">
+            <div className="logged-in-or-out" >
+            {user? loggedIn : loggedOut}
+            </div>
+            <div className="avatar-container">
+                <img className="avatar" src={avatar}/>
+                {user && <button className="login-text" id="logout" onClick={logOut}>logout</button>}
+            </div>   
         </div>
-        {/* <div id="right-side-invisible"></div> */}
+
     </div>
-  );
+  )
 }
 
 export default Header1;
