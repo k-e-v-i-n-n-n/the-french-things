@@ -66,7 +66,7 @@ a {
   border-color: var(--black);
   
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 10px;
   height: 92px;
@@ -83,6 +83,23 @@ a {
   align-items: center;
   gap: 10px;
 
+}
+
+.login-icon-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:14px;
+  padding: 30px;
+
+  /* margin-left: auto; */
+  /* width: 50px; */
+}
+
+.invisible-container{
+  visibility: collapse;
+  /* margin-right: auto; */
+  width: 123.38px;
 }
 
 .header-logo-text {
@@ -166,16 +183,7 @@ a {
   position: relative;
 }
 
-.login-icon-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap:14px;
-  padding: 14px;
 
-  margin-left: auto;
-  width: 100px;
-}
 
 .logged-in-or-out{
   display: flex;
@@ -191,10 +199,7 @@ a {
  
 }
 
-.invisible-container{
-  margin-right: auto;
-  width: 100px;
-}
+
 
 .avatar-container{
 

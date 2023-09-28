@@ -7,7 +7,6 @@ const Words = ({showListModal, setShowListModal, wordState, setWordState}) => {
 const {user, isLogged} = useContext(AppContext)
 
 
-
 const wordMap = user?.words.map((word) => (<WordCard setWordState={setWordState}  key={word.id} word={word} setShowListModal={setShowListModal}/> ))
 
 return(

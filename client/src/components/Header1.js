@@ -24,7 +24,7 @@ function logOut() {
 
   return (
     <div className="header-1">
-      <div className="invisible-container" ></div>
+      <div className="invisible-container">invisible</div>
       <div className="header-logo-container">
         <div className="header-flag">
           <div className="blue"></div>
@@ -46,7 +46,7 @@ function logOut() {
       </div>
       
         </div>
-        <div id="right-side-invisible"></div>
+        {/* <div id="right-side-invisible"></div> */}
     </div>
   );
 }
