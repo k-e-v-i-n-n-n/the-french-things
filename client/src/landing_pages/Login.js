@@ -31,7 +31,7 @@ const Login = () => {
 
     function login(e){
         e.preventDefault()
-        fetch("/api/login", {
+        fetch('/api/login', {
             method:"POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({username, password})})
