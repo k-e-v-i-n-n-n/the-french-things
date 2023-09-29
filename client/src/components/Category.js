@@ -15,7 +15,8 @@ function deleteCat(e){
     const catArray = user.categories
     const catFilter = catArray.filter((c) => c.id != category.id)
     const updatedUser = {...user, categories: catFilter}
-    setUser(updatedUser)}
+    setUser(updatedUser)
+    setCatSelected(false)}
 
     return(
 
