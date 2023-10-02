@@ -714,7 +714,6 @@ textarea:disabled{
   align-items: center;
 
   gap: 10px;
-  /* padding: 10px 10px; */
 }
 
 .category-card-container{
@@ -812,16 +811,29 @@ textarea:disabled{
 
 }
 
-#back-arrow{
+.category-selected-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
   position: relative;
-  top:34px;
-  right: 100px;
+}
+
+#back-arrow{
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top:17px;
+  right: 150px;
   cursor: pointer;
 }
 
 #back-arrow:hover{
   font-weight: 700;
   font-size: 18px;
+
+  /* opacity: 0.7;  */
+  /* text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.5); */
 }
 
 .error-category-container{

@@ -23,10 +23,11 @@ const Stars = ({catSelected, setCatSelected, setShowListModal, setWordState}) =>
         <>
             {catSelected? 
             <div className="star-select-page-container">
+                <div className="category-selected-container">
                 <p id="back-arrow" onClick={() => setCatSelected(false)}>⇦</p>
                 <div className="category-container" >
                     {singleCat}
-                    <p></p>
+                </div>
                 </div>
                 <div className="expressions-page">
                     <div className="expressions-page-container">
